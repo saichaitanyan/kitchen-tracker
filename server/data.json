@@ -1,0 +1,59 @@
+[
+    {
+        "category": "non-veg",
+        "subcategory": "Non Veg Starters",
+        "items": [
+            {
+                "itemName": "Chicken Lollipop"
+            },
+            {
+                "itemName": "Chicken Manchuria"
+            },
+            {
+                "itemName": "Pepper Chicken"
+            },
+            {
+                "itemName": "Chicken drumsticks"
+            }
+        ]
+    },
+    {
+        "category": "veg",
+        "subcategory": "Veg Starters",
+        "items": [
+            {
+                "itemName": "Gobi Manchuria"
+            },
+            {
+                "itemName": "Panner Chilli"
+            },
+            {
+                "itemName": "Mushroom Chilli"
+            }
+        ]
+    },
+    {
+        "category": "non-veg",
+        "subcategory": "Non Veg Biryani",
+        "items": [
+            {
+                "itemName": "Chicken Biryani"
+            },
+            {
+                "itemName": "Chicken Spl Biryani"
+            },
+            {
+                "itemName": "Mutton Biryani"
+            },
+            {
+                "itemName": "Fish Biryani"
+            },
+            {
+                "itemName": "Prawn Biryani"
+            },
+            {
+                "itemName": "Mixed Biryani"
+            }
+        ]
+    }
+]
