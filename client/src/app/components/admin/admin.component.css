@@ -1,6 +1,7 @@
-.main-block{
-    max-height: 80vh;
+.main-block {
+    /* max-height: 80vh; */
 }
+
 .category {
     font-size: 16px;
     font-weight: bold;
@@ -12,16 +13,15 @@
 
 .sidebar {
     background-color: lightgray;
-    max-height: 75 vh !important;
+    max-height: 75vh !important;
     overflow: scroll;
 }
-
-/* .orders-list {
-    max-height: 75vh;
-    overflow: auto;
-} */
 
 .menu-sidebar {
     overflow: auto;
     /* max-height: 80vh; */
+}
+
+.place-order-btn {
+    float: right;
 }

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { KitchenService } from 'src/app/services/kitchen.service';
 import { interval } from 'rxjs';
 import { StatusService } from 'src/app/services/status.service';
-
+enum Constants {
+  CHANGE_ORDER = 'changeOrder'
+}
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -44,14 +46,16 @@ export class AdminComponent implements OnInit {
    * add items to cart
    * @param item: any 
    */
-  async addToCart(item: any) {
+  async addToCart(item: any, type: string) {
     const itemDetails = { ...item };
-    itemDetails.count = 1;
+    if (type !== Constants.CHANGE_ORDER)
+      itemDetails.count = 1;
     const index = await this.checkItemInOrderList(item);
     if (index != -1) {
-      let count: number = await this.getItemsCount(item);
-      itemDetails.count = count + 1;
-      this.orders.splice(index, 1, itemDetails);
+      if (type !== Constants.CHANGE_ORDER) {
+        let count: number = await this.getItemsCount(item);
+        itemDetails.count = count + 1;
+      } this.orders.splice(index, 1, itemDetails);
     } else {
       this.orders.push(itemDetails);
     }
@@ -91,8 +95,8 @@ export class AdminComponent implements OnInit {
     }, 10);
   }
 
-  onChangeItemsCount(item: any) {
+  async onChangeItemsCount(item: any) {
     console.log('item ', item);
-    this.addToCart(item);
+    this.addToCart(item, Constants.CHANGE_ORDER);
   }
 }

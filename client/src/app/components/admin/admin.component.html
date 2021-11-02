@@ -20,7 +20,7 @@
                             <span>{{item.itemName | titlecase}}</span>
                             <br>
                             <br>
-                            <button class="btn btn-primary" mat-stroked-button (click)="addToCart(item)">Add to
+                            <button class="btn btn-primary" mat-stroked-button (click)="addToCart(item,'addToCart')">Add to
                                 cart</button>
                         </mat-card>
                         <br>
@@ -51,13 +51,13 @@
                 </mat-card>
                 <br>
             </div>
-            <div style="position: fixed;" class="col" *ngIf="orders.length>0">
+            <div *ngIf="orders.length>0">
                 <br>
-                <button style="float:right" mat-raised-button color="primary" [matBadge]="noOfOrders"
-                    matBadgeSize="medium" matBadgeColor="accent" (click)="placeTheOrder()">Place Order</button>
+                <button class="place-order-btn" mat-raised-button color="primary" [matBadge]="noOfOrders" matBadgeSize="medium"
+                    matBadgeColor="accent" (click)="placeTheOrder()">Place Order</button>
             </div>
-            <div class="col" *ngIf="orders.length==0">
-                <button disabled style="float:right" mat-raised-button color="primary">Place Order</button>
+            <div *ngIf="orders.length==0">
+                <button class="place-order-btn" disabled style="float:right" mat-raised-button color="primary">Place Order</button>
             </div>
 
         </div>
