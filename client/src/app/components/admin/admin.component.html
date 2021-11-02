@@ -1,0 +1,65 @@
+<div class="container-fluid main-block">
+    <div class="row">
+        <div class="col-9 menu-sidebar">
+            <br>
+            <div class="row" *ngFor="let category of itemsList;let i=index;">
+                <div class="col">
+                    <mat-card>
+                        <span class="category">{{category.subcategory}}</span>
+                        &nbsp;
+                        <span>
+                            <img src="assets/icons/{{category.category}}.png" alt="category icon" width="20"
+                                height="20">
+                        </span>
+                    </mat-card>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-3" *ngFor="let item of category.items;let j=index;">
+                        <mat-card class="item">
+                            <span>{{item.itemName | titlecase}}</span>
+                            <br>
+                            <br>
+                            <button class="btn btn-primary" mat-stroked-button (click)="addToCart(item)">Add to
+                                cart</button>
+                        </mat-card>
+                        <br>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="col-3 sidebar">
+            <br>
+            <div class="orders-list" *ngFor="let order of orders;let i=index;">
+                <mat-card>
+                    <div class="row">
+                        <div class="col-9">
+                            <span>
+                                {{order.itemName | titlecase}}
+                            </span>
+                            &nbsp;
+                            <span>
+                                X
+                            </span>
+                        </div>
+                        <div class="col">
+                            <input type="number" min="1" max="100" [name]="order.itemName" [id]="order.itemName"
+                                (change)="onChangeItemsCount(order)" [(ngModel)]="order.count" style="width:100% ;">
+                        </div>
+                    </div>
+                </mat-card>
+                <br>
+            </div>
+            <div style="position: fixed;" class="col" *ngIf="orders.length>0">
+                <br>
+                <button style="float:right" mat-raised-button color="primary" [matBadge]="noOfOrders"
+                    matBadgeSize="medium" matBadgeColor="accent" (click)="placeTheOrder()">Place Order</button>
+            </div>
+            <div class="col" *ngIf="orders.length==0">
+                <button disabled style="float:right" mat-raised-button color="primary">Place Order</button>
+            </div>
+
+        </div>
+    </div>
+</div>

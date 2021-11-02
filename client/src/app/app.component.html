@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="header">
+        <div>
+            <span>Server Status: </span>
+            &nbsp;
+            <span
+                [ngStyle]="{'color':(statusObject.status=='Connected')?'darkgreen':'red'}">{{statusObject.status}}</span>
+            &nbsp;
+        </div>
+        <div class="timecounter">
+            <span>Server Time: </span>
+            &nbsp;
+            <span>{{time }} </span>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

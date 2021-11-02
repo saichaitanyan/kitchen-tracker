@@ -1,0 +1,14 @@
+.timecounter {
+    font-size: 14px;
+}
+
+.header {
+    background: lightgray;
+    height: 40px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+    margin-top: 5px;
+}

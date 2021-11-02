@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <br>
+    <div class="row" *ngFor="let order of ordersList;let i=index;">
+        <div class="col">
+            <mat-card>
+                <span class="order-id">
+                    Order Id:
+                </span>
+                &nbsp;
+                <span class="category">{{order.id}}</span>
+                &nbsp;
+                <span class="time-counter">Time Left: </span>
+                &nbsp;
+                <span>{{time}}</span>
+                &nbsp;
+                <button mat-raised-button color="primary">Deliver</button>
+            </mat-card>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-3" *ngFor="let item of order.orderDetails;let j=index;">
+                <mat-card class="item">
+                    <span>{{item.itemName | titlecase}}</span>
+                </mat-card>
+                <br>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="row" *ngIf="ordersList.length==0">
+        <div class="col">
+            <h2> No orders</h2>
+        </div>
+    </div>
+</div>
