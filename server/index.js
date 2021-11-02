@@ -52,7 +52,7 @@ io.on('connection', async function (socket) {
     setInterval(() => {
         socket.emit(eventNames.SERVER_STATUS, message);
         logger.info('Server Status - ', message);
-    }, 5000);
+    }, 10000);
     // listen for admin login 
     socket.on(eventNames.ADMIN_LOGIN, async () => {
         isAdminLoggedIn = true;
