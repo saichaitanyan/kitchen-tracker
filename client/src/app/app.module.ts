@@ -17,8 +17,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { KitchenComponent } from './components/kitchen/kitchen.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+// 3rd party modules
+import { CountdownModule } from 'ngx-countdown';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatBadgeModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    CountdownModule
   ],
   providers: [KitchenService],
   bootstrap: [AppComponent]

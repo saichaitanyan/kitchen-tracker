@@ -34,6 +34,7 @@ const io = require('socket.io')(server, {
 });
 const message = { status: 'Connected', timestamp: new Date() };
 let isAdminLoggedIn = false;
+const orderDetailsMapBk = [];
 let kitchenJson;
 /** on connect to socket */
 io.on('connection', async function (socket) {
@@ -60,12 +61,11 @@ io.on('connection', async function (socket) {
     });
     // listen for orders 
     socket.on(eventNames.PLACE_ORDER, async (data) => {
-        console.log('received order ', data);
-
         const uniqueId = uuidv4();
         const orderDetails = {
             id: uniqueId,
-            orderDetails: data
+            orderDetails: data,
+            orderNo: orders.length + 1
         };
         orders.push(orderDetails);
         logger.info('socket ID - ' + socket.id + ' | Order details ', orderDetails)

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid main-frame">
     <br>
     <div class="row" *ngFor="let order of ordersList;let i=index;">
         <div class="col">
@@ -7,11 +7,11 @@
                     Order Id:
                 </span>
                 &nbsp;
-                <span class="category">{{order.id}}</span>
+                <span class="order-id">{{order.orderNo}}</span>
                 &nbsp;
                 <span class="time-counter">Time Left: </span>
+                <countdown class="custom-timer" #cd [config]="order.timeRequired" (event)="handleEvent($event,order)"></countdown>
                 &nbsp;
-                <span>{{time}}</span>
                 &nbsp;
                 <button mat-raised-button color="primary">Deliver</button>
             </mat-card>
@@ -21,6 +21,10 @@
             <div class="col-3" *ngFor="let item of order.orderDetails;let j=index;">
                 <mat-card class="item">
                     <span>{{item.itemName | titlecase}}</span>
+                    &nbsp;
+                    <span> X </span>
+                    &nbsp;
+                    <span>{{item.count}}</span>
                 </mat-card>
                 <br>
             </div>

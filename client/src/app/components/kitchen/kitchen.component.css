@@ -1,4 +1,18 @@
-.order-id, .time-counter {
+.main-frame {
+    background-color: gray;
+}
+
+.order-id {
+    font-size: 16px;
+}
+.item{
     font-size: 14px;
-    font-weight: bold;
+}
+
+:host ::ng-deep .custom-timer {
+    background-color: darkgoldenrod;
+    color: #fff;
+    padding: 1em;
+    margin: 1rem;
+    font-size: 16px;
 }
